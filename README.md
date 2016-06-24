@@ -50,8 +50,8 @@ This example assumes that `Orcid` and `OrcidValidator` are in the same namespace
 
 To validate the class, call `validate($person)` from your app's Validator service. You can look [here](http://symfony.com/doc/current/book/validation.html#using-the-validator-service) for an example in Symfony, or here is an example in Silex:
 
-    $this->app = new \Silex\Application();
-    $this->app->register(new \Silex\Provider\ValidatorServiceProvider());
+    $app = new \Silex\Application();
+    $app->register(new \Silex\Provider\ValidatorServiceProvider());
     $carl = new Person('Sagan, Carl', '0000-0002-3158-3558');
     $errors = $app['validator']->validate($carl);
     if (count($errors) > 0) {
